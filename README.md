@@ -1,6 +1,5 @@
 # Jarvis-Android
 My personal AI voice assistant
-
 ## Features
 - **Voice Input (STT):** Tap to speak and convert voice to text.
 - **AI Responses:** Sends spoken queries to a Gemini model and returns concise answers.
