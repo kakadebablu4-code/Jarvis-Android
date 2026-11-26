@@ -1,27 +1,46 @@
 
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+package com.example.jarvis
 
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+import android.app.Activity
+import android.os.Bundle
+import android.graphics.Color
+import android.view.Gravity
+import android.widget.LinearLayout
+import android.widget.TextView
 
-    <application
-        android:label="JARVIS"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+class MainActivity : Activity() {
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        val layout = LinearLayout(this)
+        layout.orientation = LinearLayout.VERTICAL
+        layout.gravity = Gravity.CENTER
+        layout.setBackgroundColor(Color.rgb(5, 12, 30))
+        layout.setPadding(30, 30, 30, 30)
 
-        </activity>
+        val title = TextView(this)
+        title.text = "J.A.R.V.I.S"
+        title.textSize = 34f
+        title.setTextColor(Color.CYAN)
+        title.gravity = Gravity.CENTER
 
-    </application>
-</manifest>
-    
+        val subtitle = TextView(this)
+        subtitle.text = "HELLO! I AM YOUR AI ASSISTANT"
+        subtitle.textSize = 16f
+        subtitle.setTextColor(Color.WHITE)
+        subtitle.gravity = Gravity.CENTER
+
+        val status = TextView(this)
+        status.text = "\nSYSTEM ONLINE\n\nYour JARVIS is ready!"
+        status.textSize = 20f
+        status.setTextColor(Color.GREEN)
+        status.gravity = Gravity.CENTER
+
+        layout.addView(title)
+        layout.addView(subtitle)
+        layout.addView(status)
+
+        setContentView(layout)
+    }
+}
