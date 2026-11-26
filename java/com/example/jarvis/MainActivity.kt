@@ -1,20 +1,27 @@
 
-package com.example.jarvis
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-import android.app.Activity
-import android.os.Bundle
-import android.widget.TextView
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
 
-class MainActivity : Activity() {
+    <application
+        android:label="JARVIS"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
 
-        val text = TextView(this)
-        text.text = "Hello! I am JARVIS. How can I help you?"
-        text.textSize = 22f
-        text.setPadding(30, 50, 30, 30)
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
-        setContentView(text)
-    }
-}
+        </activity>
+
+    </application>
+</manifest>
+    
