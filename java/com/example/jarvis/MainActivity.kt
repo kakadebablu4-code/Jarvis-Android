@@ -1,4 +1,3 @@
-
 package com.example.jarvis
 
 import android.app.Activity
@@ -25,12 +24,6 @@ class MainActivity : Activity() {
         title.setTextColor(Color.CYAN)
         title.gravity = Gravity.CENTER
 
-        val subtitle = TextView(this)
-        subtitle.text = "HELLO! I AM YOUR AI ASSISTANT"
-        subtitle.textSize = 16f
-        subtitle.setTextColor(Color.WHITE)
-        subtitle.gravity = Gravity.CENTER
-
         val status = TextView(this)
         status.text = "\nSYSTEM ONLINE\n\nYour JARVIS is ready!"
         status.textSize = 20f
@@ -38,7 +31,6 @@ class MainActivity : Activity() {
         status.gravity = Gravity.CENTER
 
         layout.addView(title)
-        layout.addView(subtitle)
         layout.addView(status)
 
         setContentView(layout)
