@@ -15,7 +15,9 @@ class MainActivity : Activity() {
         layout.orientation = LinearLayout.VERTICAL
         layout.gravity = Gravity.CENTER
         layout.setBackgroundColor(Color.rgb(5, 12, 30))
-        layout.setPadding(30, 30, 30, 30)
+        val density = resources.displayMetrics.density
+        val padding = (30 * density).toInt()
+        layout.setPadding(padding, padding, padding, padding)
 
         val title = TextView(this)
         title.text = "J.A.R.V.I.S"
